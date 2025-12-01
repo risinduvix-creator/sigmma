@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Script Key - One File</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        main {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        #getKeyButton {
+            background-color: #28a745; /* Green button */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+
+        #getKeyButton:hover {
+            background-color: #218838;
+        }
+
+        #keyOutput {
+            margin-top: 25px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #eee;
+        }
+
+        #keyDisplay {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #d9534f; /* Red for emphasis */
+            user-select: all; /* Allows easy selection */
+        }
+
+        .warning {
+            font-size: 0.8em;
+            color: #6c757d;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>🔑 Get Your Access Key</h1>
+        <p>Click the button below to retrieve the necessary key for your script.</p>
+        
+        <button id="getKeyButton">Generate Key</button>
+        
+        <div id="keyOutput">
+            <h2>Your Key:</h2>
+            <p id="keyDisplay">Key will appear here...</p>
+        </div>
+        
+        <p class="warning">
+            Note: This is a static demonstration key. For a real application, keys must be generated securely on a server.
+        </p>
+    </main>
+
+    <script>
+        // --- WARNING: This is a STATIC, PUBLICLY visible key. ---
+        // Do not use this method for real, secure keys.
+        const STATIC_ACCESS_KEY = "YOUR-SCRIPT-KEY-1234-DEMO-ONLY";
+
+        document.getElementById('getKeyButton').addEventListener('click', function() {
+            const keyDisplayElement = document.getElementById('keyDisplay');
+            
+            // Display the static key
+            keyDisplayElement.textContent = STATIC_ACCESS_KEY;
+            
+            // Optional: Change the button text and disable it after generation
+            this.textContent = "Key Displayed!";
+            this.disabled = true;
+        });
+    </script>
+</body>
+</html>
